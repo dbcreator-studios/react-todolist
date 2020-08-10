@@ -37,8 +37,8 @@ const Todos = () => {
 
   return (
     <section className="todos">
-      {todos.map((todo) => {
-        return <Todo text={todo.text} />;
+      {todos.map((todo, key) => {
+        return <Todo text={todo.text} key={key} />;
       })}
     </section>
   );
