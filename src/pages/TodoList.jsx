@@ -10,10 +10,20 @@ const TodoList = () => {
     { text: "2. Belajar Laravel" },
     { text: "3. Belajar Flutter" }
   ]);
+
+  const [showAdd, setShowAdd] = useState(false);
+
+  const addTodo = (value) => {
+    const addedTodo = [...todos, { text: value }];
+    setTodos(addedTodo);
+  };
+
+  const showAddToggle = () => setShowAdd(!showAdd);
+
   return (
     <Paper>
-      <Header />
-      <TodoForm />
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} />
+      <TodoForm addTodo={addTodo} showAdd={showAdd} />
       <Todos todos={todos} />
     </Paper>
   );
