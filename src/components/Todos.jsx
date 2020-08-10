@@ -2,11 +2,19 @@ import React from "react";
 import Todo from "./Todo";
 import PropType from "prop-types";
 
-const Todos = ({ todos }) => {
+const Todos = ({ todos, completeTodo }) => {
   return (
     <section className="todos">
-      {todos.map((todo, key) => {
-        return <Todo text={todo.text} key={key} />;
+      {todos.map((todo, index) => {
+        return (
+          <Todo
+            key={index}
+            index={index}
+            text={todo.text}
+            isCompleted={todo.isCompleted}
+            completeTodo={completeTodo}
+          />
+        );
       })}
     </section>
   );
@@ -15,9 +23,11 @@ const Todos = ({ todos }) => {
 Todos.propType = {
   todos: PropType.arrayOf(
     PropType.shape({
-      text: PropType.string
+      text: PropType.string.isRequired,
+      isCompleted: PropType.bool.isRequired
     })
-  )
+  ),
+  completeTodo: PropType.func.isRequired
 };
 
 export default Todos;
