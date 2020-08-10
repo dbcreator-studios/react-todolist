@@ -144,3 +144,15 @@ html {
   left: 50%;
   transform: translate(-50%);
 }
+
+.todo-placeholder-text {
+  font-family: "Homemade Apple", cursive;
+  font-size: 24px;
+  text-align: center;
+  padding: 16px;
+}
+
+.todo-btn-placeholder-text {
+  font-family: "Bungee Shade", cursive;
+  font-size: 24px;
+}
