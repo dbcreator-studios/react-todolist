@@ -21,7 +21,7 @@ const TodoList = () => {
     alert("Max todo limit reached!");
   };
 
-  const clearTodos = () => setTodos([]);
+  const clearTodos = () => !showAdd && setTodos([]);
 
   const showAddToggle = () => setShowAdd(!showAdd);
 
